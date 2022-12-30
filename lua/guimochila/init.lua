@@ -1,2 +1,2 @@
 require("guimochila.remap")
-print("Software Engineer")
+require("guimochila.set")
