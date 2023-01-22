@@ -1,4 +1,4 @@
-return function(use)
+ return function(use)
   use({
     "folke/which-key.nvim",
       config = function()
@@ -7,5 +7,18 @@ return function(use)
   })
 
   use('thePrimeagen/harpoon')
+
+  -- Colorschemes
+
+  -- LSP
+  use('jose-elias-alvarez/null-ls.nvim')
+
+  -- Better coding
+  use({
+     'windwp/nvim-autopairs',
+     config = function()
+      require('nvim-autopairs').setup()
+     end
+   })
 
 end
