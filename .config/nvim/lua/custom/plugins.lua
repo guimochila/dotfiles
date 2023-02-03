@@ -8,6 +8,7 @@ return function(use)
 
   use('thePrimeagen/harpoon')
   use('christoomey/vim-tmux-navigator')
+  use('simrat39/symbols-outline.nvim')
 
   use({
     "nvim-neo-tree/neo-tree.nvim",
