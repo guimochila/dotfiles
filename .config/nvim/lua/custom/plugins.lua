@@ -9,6 +9,7 @@ return function(use)
   use('thePrimeagen/harpoon')
   use('christoomey/vim-tmux-navigator')
   use('simrat39/symbols-outline.nvim')
+  use('voldikss/vim-floaterm')
 
   use({
     "nvim-neo-tree/neo-tree.nvim",
@@ -32,5 +33,4 @@ return function(use)
       require('nvim-autopairs').setup()
     end
   })
-
 end
