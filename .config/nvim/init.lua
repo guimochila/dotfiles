@@ -1,2 +1,1 @@
-require("kickstart")
 require("guimochila")
