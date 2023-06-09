@@ -12,9 +12,10 @@ local plugins = {
       ensure_installed = {
         "rust-analyzer",
         "html-lsp",
-        "tsserver",
-        "estlint",
-        "cssls",
+        "graphql-language-service-cli",
+        "eslint-lsp",
+        "css-lsp",
+        "typescript-language-server",
         "prettier",
         "stylua"
       },
