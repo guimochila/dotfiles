@@ -32,6 +32,13 @@ local plugins = {
     "simrat39/rust-tools.nvim",
     ft = "rust",
     dependencies = "neovim/nvim-lspconfig",
+    opts = {
+      tools = {
+        inlay_hints = {
+          auto = true
+        }
+      }
+    } 
   },
   {
     "mfussenegger/nvim-dap",
