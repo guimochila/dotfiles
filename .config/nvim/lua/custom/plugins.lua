@@ -66,6 +66,13 @@ local plugins = {
     config = function()
       require('Navigator').setup()
     end
+  },
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    keys = {
+      {"<leader>cx", ":TroubleToggle<CR>", desc = "Toggles Trouble"}
+    }
   }
 }
 
