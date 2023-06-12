@@ -73,6 +73,13 @@ local plugins = {
     keys = {
       {"<leader>cx", ":TroubleToggle<CR>", desc = "Toggles Trouble"}
     }
+  },
+  {
+    "tpope/vim-fugitive",
+    lazy = false,
+    keys = {
+      {"<leader>gs", ":Git<CR>", desc = "Fugitive/Git status"}
+    }
   }
 }
 
