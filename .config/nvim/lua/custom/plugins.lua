@@ -1,6 +1,12 @@
 local plugins = {
   {
     "neovim/nvim-lspconfig",
+    dependencies = {
+      "jose-elias-alvarez/null-ls.nvim",
+      config = function ()
+        require "custom.configs.null-ls"
+      end
+    },
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
@@ -22,6 +28,25 @@ local plugins = {
     },
   },
   {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "tsx",
+        "json",
+        "rust"
+      },
+      autotag = {
+        enable = true,
+      }
+    }
+  },
+  {
     "rust-lang/rust.vim",
     ft = "rust",
     init = function()
@@ -38,7 +63,7 @@ local plugins = {
           auto = true
         }
       }
-    } 
+    }
   },
   {
     "mfussenegger/nvim-dap",
@@ -80,6 +105,15 @@ local plugins = {
     keys = {
       {"<leader>gs", ":Git<CR>", desc = "Fugitive/Git status"}
     }
+  },
+  {
+    "ThePrimeagen/git-worktree.nvim"
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    init = function ()
+      require("telescope").load_extension("git_worktree")
+    end
   }
 }
 
