@@ -110,10 +110,10 @@ local plugins = {
     "ThePrimeagen/git-worktree.nvim"
   },
   {
-    "nvim-telescope/telescope.nvim",
-    init = function ()
-      require("telescope").load_extension("git_worktree")
-    end
+     "nvim-telescope/telescope.nvim",
+    opts = {
+      extension_list = {"git-worktree"}
+    }
   }
 }
 
