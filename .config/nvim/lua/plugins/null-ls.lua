@@ -9,17 +9,18 @@ return {
     local b = null_ls.builtins
 
     local sources = {
-      --      b.formatting.prettier.with({
-      --        filetypes = { "html", "css", "json", "yaml", "javascript", "javascriptreact", "typescript", "typescriptreact" }
-      --      }),
-      b.diagnostics.eslint,
+      b.formatting.eslint_d,
+      b.formatting.prettier.with({
+        filetypes = { "html", "css", "json", "yaml" }
+      }),
+      b.diagnostics.eslint_d,
       b.formatting.stylua,
     }
     return {
       sources = sources,
     }
   end,
-  init = function()
+  config = function(_, opts)
     require('null-ls').setup(opts)
   end
 }
