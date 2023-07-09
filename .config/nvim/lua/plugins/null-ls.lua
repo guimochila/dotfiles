@@ -9,14 +9,10 @@ return {
     local b = null_ls.builtins
 
     local sources = {
-      b.formatting.prettier.with({
-        filetypes = { "html", "css", "json", "yaml", "javascript", "javascriptreact", "typescript", "typescriptreact" }
-      }),
+      --      b.formatting.prettier.with({
+      --        filetypes = { "html", "css", "json", "yaml", "javascript", "javascriptreact", "typescript", "typescriptreact" }
+      --      }),
       b.diagnostics.eslint,
-      -- for tailwindcss
-      b.formatting.rustywind.with({
-        filetypes = { "html", "css", "javascriptreact", "typescriptreact" },
-      }),
       b.formatting.stylua,
     }
     return {
