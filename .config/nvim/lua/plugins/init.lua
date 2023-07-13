@@ -75,17 +75,29 @@ return {
 
 
   -- Color scheme
+  -- {
+  --   "loctvl842/monokai-pro.nvim",
+  --   lazy = false,
+  --   config = function()
+  --     vim.cmd([[colorscheme monokai-pro]])
+  --
+  --     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+  --     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+  --   end
+  -- },
   {
-    "loctvl842/monokai-pro.nvim",
-    lazy = false,
+    "oxfist/night-owl.nvim",
+    lazy = false,    -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
-      vim.cmd([[colorscheme monokai-pro]])
+      -- load the colorscheme here
+      vim.cmd.colorscheme("night-owl")
 
       vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-    end
+      vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg = 0, bg = "#092135" })
+    end,
   },
-
   -- Utilities
   { 'theprimeagen/harpoon' },
   {
@@ -177,4 +189,10 @@ return {
       { 'ga', '<Plug>(EasyAlign)' },
     }
   },
+  {
+    'RRethy/vim-illuminate',
+    config = function()
+      vim.cmd([[hi IlluminatedWordRead guibg=#525252]])
+    end
+  }
 }
