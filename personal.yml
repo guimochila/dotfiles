@@ -1,0 +1,16 @@
+# Personal dev env playbook
+
+- hosts: localhost
+  vars:
+    source_key: "./.ssh/id_guimochila"
+    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_guimochila"
+  pre_tasks:
+    - name: Update cache
+      homebrew:
+        update_homebrew: yes
+      tags:
+        - fish
+  tasks:
+    - include: tasks/fish.yml
+    - include: tasks/ssh.yml
+    - include: tasks/dotfiles.yml

@@ -1,0 +1,11 @@
+- name: Installing stow
+  homebrew:
+    name: stow
+  tags:
+    - dotfiles
+    - stow
+- name: Stow dotfiles
+  shell: "cd dotfiles && stow . --target {{ lookup('env', 'HOME') }} --verbose=2"
+  tags:
+    - dotfiles
+    - stow
