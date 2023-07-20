@@ -16,7 +16,7 @@ else
 fi
 
 if [ -f "./personal.yml" ]; then
-  ansible-playbook ./personal.yml
+  ansible-playbook ./personal.yml --ask-vault-pass
 else
   echo "No playbook found."
 fi

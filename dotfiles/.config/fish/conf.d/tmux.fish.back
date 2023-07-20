@@ -1,0 +1,24 @@
+set session_name "Personal"
+
+# Check if tmux is running
+if set -q TMUX 
+    # Check if the session exists
+    if tmux has-session -t $session_name > /dev/null 2>&1
+        # Check if the session is already attached
+        if not tmux list-panes -s -t $session_name > /dev/null 2>&1
+            # Attach to the session
+            tmux attach-session -t $session_name
+        end
+    else
+        echo "Session '$session_name' does not exist"
+    end
+else
+    if tmux has-session -t $session_name > /dev/null 2>&1
+        echo "Tmux is not running. Starting tmux and attaching session '$session_name'..."
+
+        # Start tmux and attach to the session
+        tmux attach-session -t $session_name
+    else
+        echo "Tmux is not running and session '$session_name' does not exist"
+    end
+end

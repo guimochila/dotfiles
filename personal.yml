@@ -14,3 +14,5 @@
     - include: tasks/fish.yml
     - include: tasks/ssh.yml
     - include: tasks/dotfiles.yml
+    - include: tasks/node-setup.yml
+

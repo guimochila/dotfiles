@@ -1,0 +1,45 @@
+- name: Install Volta (volta.sh)
+  shell: curl https://get.volta.sh | bash
+  tags:
+    - install
+    - node
+
+- name: Install Node Current Version
+  shell: volta install node@latest
+  tags:
+    - install
+    - node
+
+- name: Install Node LTS
+  shell: volta install node
+  tags:
+    - install
+    - node
+
+- name: Install Yarn v1
+  shell: volta install yarn@v1.22.19
+  tags:
+    - install
+    - node
+
+- name: Install pnpm
+  npm:
+    name: pnpm
+    global: yes
+  tags:
+    - install
+    - node
+
+- name: Install TLDR
+  npm:
+    name: tldr
+    global: yes
+  tags:
+    - install
+    - node
+
+- name: Update TLDR cache
+  shell: tldr --update
+  tags:
+    - install
+    - node
