@@ -9,6 +9,7 @@
   homebrew:
     update_homebrew: yes
     name: font-jetbrains-mono-nerd-font
+  ignore_errors: yes
   tags:
     - fonts
     - install
