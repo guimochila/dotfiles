@@ -1,5 +1,5 @@
 - name: Tap NerdFonts Homebrew repository 
-  homebrew_cask:
+  homebrew_tap:
     name: homebrew/cask-fonts
   tags:
     - fonts
