@@ -1,0 +1,14 @@
+- name: Tap NerdFonts Homebrew repository 
+  homebrew_tap:
+    name: homebrew/cask-fonts
+  tags:
+    - fonts
+    - install
+
+- name: Install JetBrainsMono Nerd Font
+  homebrew:
+    update_homebrew: yes
+    name: font-jetbrains-mono-nerd-font
+  tags:
+    - fonts
+    - install

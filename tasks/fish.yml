@@ -3,3 +3,30 @@
     name: fish
   tags:
     - fish
+    - install
+
+- name: Install OH-MY-FISH
+  shell: curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+  tags:
+    - fish
+    - install
+
+- name: Install OMF fzf plugin
+  shell: omf install PatrickF1/fzf.fish
+  tags:
+    - fish
+    - install
+
+- name: Install OMF z plugin
+  shell: omf install jethrokuan/z
+  tags:
+    - fish
+    - install
+
+- name: Install Starship
+  homebrew:
+    name: starship
+  tags:
+    - fish
+    - install
+

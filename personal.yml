@@ -11,8 +11,11 @@
       tags:
         - fish
   tasks:
+    - include: tasks/nerdfonts.yml
     - include: tasks/fish.yml
+    - include: tasks/core.yml
     - include: tasks/ssh.yml
     - include: tasks/dotfiles.yml
     - include: tasks/node-setup.yml
+    - include: tasks/langs.yml
 

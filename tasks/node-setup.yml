@@ -30,16 +30,3 @@
     - install
     - node
 
-- name: Install TLDR
-  npm:
-    name: tldr
-    global: yes
-  tags:
-    - install
-    - node
-
-- name: Update TLDR cache
-  shell: tldr --update
-  tags:
-    - install
-    - node
