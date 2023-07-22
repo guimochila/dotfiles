@@ -11,7 +11,7 @@
       tags:
         - fish
   tasks:
-    - include: tasks/nerdfonts.yml
+    - include: tasks/nerdfont.yml
     - include: tasks/fish.yml
     - include: tasks/core.yml
     - include: tasks/ssh.yml
