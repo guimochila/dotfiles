@@ -5,19 +5,19 @@
     - node
 
 - name: Install Node Current Version
-  shell: volta install node@latest
+  shell: /usr/bin/env fish -c "volta install node@latest"
   tags:
     - install
     - node
 
 - name: Install Node LTS
-  shell: volta install node
+  shell: /usr/bin/env fish -c "volta install node"
   tags:
     - install
     - node
 
 - name: Install Yarn v1
-  shell: volta install yarn@v1.22.19
+  shell: /usrbin/env fish -c "volta install yarn@v1.22.19"
   tags:
     - install
     - node
