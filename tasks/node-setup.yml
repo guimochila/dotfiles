@@ -17,7 +17,7 @@
     - node
 
 - name: Install Yarn v1
-  shell: /usrbin/env fish -c "volta install yarn@v1.22.19"
+  shell: /usr/bin/env fish -c "volta install yarn@v1.22.19"
   tags:
     - install
     - node
