@@ -25,7 +25,7 @@
 - name: Install pnpm
   npm:
     name: pnpm
-    executable: "{{ lookup('env', 'HOME')/.volta/bin/npm }}"
+    executable: "{{ lookup('env', 'HOME') }}/.volta/bin/npm"
     global: yes
   tags:
     - install
