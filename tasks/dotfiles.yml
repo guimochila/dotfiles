@@ -5,7 +5,7 @@
     - dotfiles
     - stow
 - name: Stow dotfiles
-  shell: "cd dotfiles && stow . --target {{ lookup('env', 'HOME') }} --verbose=2"
+  shell: "./stow_folders"
   tags:
     - dotfiles
     - stow

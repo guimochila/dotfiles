@@ -11,6 +11,13 @@
     - fish
     - install
 
+# A hack to reload OMF variables
+- name: Reload OMF
+  shell: fish -c exit
+  tags:
+    - fish
+    - install
+
 - name: Install OMF fzf plugin
   shell: /usr/bin/env fish -c "omf install https://github.com/PatrickF1/fzf.fish"
   tags:
