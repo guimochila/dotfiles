@@ -6,19 +6,19 @@
     - install
 
 - name: Install OH-MY-FISH
-  shell: curl -L https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install -o /tmp/install | fish /tmp/install -y --offline --noninteractive
+  shell: curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > /tmp/install | fish /tmp/install -y --noninteractive
   tags:
     - fish
     - install
 
 - name: Install OMF fzf plugin
-  shell: /usr/bin/env fish -c omf install PatrickF1/fzf.fish
+  shell: /usr/bin/env fish -c "omf install https://github.com/PatrickF1/fzf.fish"
   tags:
     - fish
     - install
 
 - name: Install OMF z plugin
-  shell: /usr/bin/env fish -c omf install jethrokuan/z
+  shell: /usr/bin/env fish -c "omf install  https://github.com/jethrokuan/z"
   tags:
     - fish
     - install

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+STOW_FOLDERS=( "tmux" "nvim" "fish" "bin" )
+
+for folder in "${STOW_FOLDERS[@]}" 
+do
+  if [ -d $folder ]; then
+    echo "Stowing $folder"
+    stow -D $folder
+    stow $folder --target $HOME --verbose=2
+  fi
+done

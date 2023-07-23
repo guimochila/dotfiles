@@ -1,5 +1,4 @@
-#!/bin/bash
-#
+#!/usr/bin/env bash
 
 if ! type "brew" &> /dev/null; then
   echo "Brew not installed! Installing..."
