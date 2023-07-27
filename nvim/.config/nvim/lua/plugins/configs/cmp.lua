@@ -1,25 +1,25 @@
 local cmp = require('cmp')
 
 -- Set completept to have a better completaion experience
-vim.opt.completeopt = {'menuone', 'noselect', 'noinsert'}
-vim.opt.shortmess = vim.opt.shortmess + { c = true}
+vim.opt.completeopt = { 'menuone', 'noselect', 'noinsert' }
+vim.opt.shortmess = vim.opt.shortmess + { c = true }
 vim.api.nvim_set_option('updatetime', 300)
 
 local options = {
   completion = {
     completeopt = "menu,menuone",
   },
-   snippet = {
+  snippet = {
     expand = function(args)
       require("luasnip").lsp_expand(args.body)
     end,
   },
   mapping = {
-  ["<C-p>"] = cmp.mapping.select_prev_item(),
-  ["<C-n>"] = cmp.mapping.select_next_item(),
-  ["<CR>"] = cmp.mapping.confirm({ behavior =  cmp.ConfirmBehavior.Instert, select = true }),
-  ["<C-Space>"] = cmp.mapping.complete(),
-  ["<Tab>"] = cmp.mapping(function(fallback)
+    ["<C-p>"] = cmp.mapping.select_prev_item(),
+    ["<C-n>"] = cmp.mapping.select_next_item(),
+    ["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Instert, select = true }),
+    ["<C-Space>"] = cmp.mapping.complete(),
+    ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif require("luasnip").expand_or_jumpable() then
@@ -45,14 +45,13 @@ local options = {
     }),
   },
 
-  sources =  cmp.config.sources({
-    { name = "luasnip"},
-    { name = "nvim_lsp"},
-    { name = "buffer"},
-    { name = "nvim_lua"},
-    { name = "path"},
+  sources = cmp.config.sources({
+    { name = "luasnip" },
+    { name = "nvim_lsp" },
+    { name = "buffer" },
+    { name = "nvim_lua" },
+    { name = "path" },
   })
 }
 
 cmp.setup(options)
-
