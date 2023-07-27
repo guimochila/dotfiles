@@ -44,8 +44,8 @@ local rust_tools = require('rust-tools')
 rust_tools.setup({
   server = {
     on_attach = function(_, bufnr)
-      vim.keymap.set('n', '<leader>ca', rust_tools.hover_actions.hover_actions, { buffer = bufnr, desc = "Hover Action" })
-      vim.keymap.set("n", "<Leader>vca", rust_tools.code_action_group.code_action_group,
+      vim.keymap.set('n', '<leader>va', rust_tools.hover_actions.hover_actions, { buffer = bufnr, desc = "Hover Action" })
+      vim.keymap.set("n", "<Leader>vc", rust_tools.code_action_group.code_action_group,
         { buffer = bufnr, desc = "Code Actions" })
     end
   }
