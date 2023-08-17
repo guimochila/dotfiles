@@ -9,10 +9,10 @@ return {
     local b = null_ls.builtins
 
     local sources = {
-      b.formatting.eslint_d,
       b.formatting.prettier.with({
-        filetypes = { "html", "css", "json", "yaml" }
+        filetypes = { "html", "css", "json", "yaml", "javascript", "javascriptreact" }
       }),
+      b.formatting.eslint_d,
       b.diagnostics.eslint_d,
       b.formatting.stylua,
     }

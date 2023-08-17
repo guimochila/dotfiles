@@ -1,3 +1,6 @@
+vim.opt.guicursor = {
+  'i-ci:block-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100',
+}
 -- Remapping keys
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open file explorer" })

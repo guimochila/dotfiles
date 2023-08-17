@@ -49,19 +49,19 @@ return {
               require("plugins.configs.luasnippets").luasnip(opts)
             end,
           },
-          -- {
-          --   "windwp/nvim-autopairs",
-          --   opts = {
-          --     fast_wrap = {},
-          --     disable_filetype = { "TelescopePrompt", "vim" },
-          --   },
-          --   config = function(_, opts)
-          --     require("nvim-autopairs").setup(opts)
-          --     -- setup cmp for autopairs
-          --     local cmp_autopairs = require "nvim-autopairs.completion.cmp"
-          --     require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
-          --   end,
-          -- },
+          {
+            "windwp/nvim-autopairs",
+            opts = {
+              fast_wrap = {},
+              disable_filetype = { "TelescopePrompt", "vim" },
+            },
+            config = function(_, opts)
+              require("nvim-autopairs").setup(opts)
+              -- setup cmp for autopairs
+              local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+              require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
+            end,
+          },
         },
       },
       { "saadparwaiz1/cmp_luasnip" },
@@ -97,6 +97,7 @@ return {
       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
       vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg = 0, bg = "#092135" })
       vim.api.nvim_set_hl(0, "MatchParen", { bg = "#00a884" })
+      vim.api.nvim_set_hl(0, "VisualActive", { bg = "#1d3b88" })
     end,
   },
   -- Utilities
