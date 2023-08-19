@@ -1,9 +1,6 @@
 vim.opt.guicursor = {
   'i-ci:block-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100',
 }
--- Remapping keys
-vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open file explorer" })
 
 vim.opt.clipboard = 'unnamedplus'
 
@@ -22,6 +19,3 @@ vim.opt.scrolloff = 8
 vim.opt.colorcolumn = "80"
 vim.opt.textwidth = 80
 vim.opt.termguicolors = true
-
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
