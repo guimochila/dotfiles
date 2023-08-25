@@ -42,7 +42,7 @@ lsp.format_on_save({
 })
 
 lsp.on_attach(function(client, bufnr)
-  vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, { buffer = buffer, desc = "Go to definition" })
+  vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, { buffer = bufnr, desc = "Go to definition" })
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, { buffer = bufnr, desc = "Hover" })
   vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end,
     { buffer = bufnr, desc = "Diagnostics" })
