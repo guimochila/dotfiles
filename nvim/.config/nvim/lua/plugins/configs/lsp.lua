@@ -20,6 +20,16 @@ lsp.configure('lua_ls', {
   }
 })
 
+-- Configuring ESlint LSP
+require('lspconfig').eslint.setup({
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end,
+})
+
 lsp.format_on_save({
   format_opts = {
     async = false,
@@ -28,7 +38,6 @@ lsp.format_on_save({
   servers = {
     ['lua_ls'] = { 'lua' },
     ['rust_analyzer'] = { 'rust' },
-    ['null-ls'] = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' }
   }
 })
 
@@ -41,6 +50,7 @@ lsp.on_attach(function(client, bufnr)
     { buffer = bufnr, desc = "Code Actions" })
   vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, { buffer = bufnr, desc = "References" })
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, { buffer = bufnr, desc = "Rename" })
+  lsp.buffer_autoformat()
 end)
 
 -- lsp.skip_server_setup({ 'rust_analyzer' })

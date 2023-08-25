@@ -142,7 +142,6 @@ return {
   {
     'windwp/nvim-ts-autotag', opts = { update_on_insert = true }
   },
-  { 'prettier/vim-prettier', init = function() require('config.prettierrc') end },
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
