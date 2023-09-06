@@ -18,6 +18,7 @@ end
 # <<< conda initialize <<<
 
 alias vim='nvim'
+alias rmmodules='find . -name \'node_modules\' -type d -prune -exec rm -rf \'{}\' +'
 
 # fzf bindings
 fzf_configure_bindings --directory=\cF --git_status=\cS --git_log=\cG --processes=\cP

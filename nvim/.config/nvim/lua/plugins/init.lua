@@ -4,7 +4,6 @@ return {
     'nvim-lua/plenary.nvim',
     lazy = true
   },
-
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
@@ -198,5 +197,8 @@ return {
     config = function()
       vim.cmd([[hi IlluminatedWordRead guibg=#525252]])
     end
+  },
+  {
+    'adnan007d/vim-prettier'
   }
 }
