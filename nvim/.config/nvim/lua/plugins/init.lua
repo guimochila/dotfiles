@@ -198,7 +198,5 @@ return {
       vim.cmd([[hi IlluminatedWordRead guibg=#525252]])
     end
   },
-  {
-    'adnan007d/vim-prettier'
-  }
+  { 'adnan007d/vim-prettier' }
 }
