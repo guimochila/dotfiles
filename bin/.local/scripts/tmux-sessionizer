@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-session=$(find ~/Personal ~/Personal/learning ~/work ~/work/devportal-local-env -mindepth 1 -maxdepth 1 -type d | fzf)
+session=$(find ~/Personal ~/Personal/learning ~/repos ~/work ~/work/devportal-local-env -mindepth 1 -maxdepth 1 -type d 2> /dev/null | fzf)
 
 if [[ -z $session ]]; then
   exit 0
