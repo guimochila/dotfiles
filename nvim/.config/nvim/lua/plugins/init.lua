@@ -157,7 +157,7 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     init = function()
-      require('gitsigns').setup()
+      require "plugins.configs.gitsigns"
     end,
     keys = {
       { "<leader>tb", ":Gitsigns blame_line<CR>", desc = "Git line blame" }
@@ -198,5 +198,6 @@ return {
       vim.cmd([[hi IlluminatedWordRead guibg=#525252]])
     end
   },
-  { 'adnan007d/vim-prettier' }
+  { 'adnan007d/vim-prettier' },
+  { 'tpope/vim-fugitive' }
 }

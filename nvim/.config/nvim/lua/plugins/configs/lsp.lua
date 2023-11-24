@@ -37,7 +37,7 @@ lsp.format_on_save({
   },
   servers = {
     ['lua_ls'] = { 'lua' },
-    ['rust_analyzer'] = { 'rust' },
+    --    ['rust_analyzer'] = { 'rust' },
   }
 })
 
@@ -52,8 +52,6 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, { buffer = bufnr, desc = "Rename" })
   lsp.buffer_autoformat()
 end)
-
--- lsp.skip_server_setup({ 'rust_analyzer' })
 
 local rust_tools = require('rust-tools')
 
