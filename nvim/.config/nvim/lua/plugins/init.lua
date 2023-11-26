@@ -156,9 +156,6 @@ return {
   },
   {
     "lewis6991/gitsigns.nvim",
-    init = function()
-      require "plugins.configs.gitsigns"
-    end,
     keys = {
       { "<leader>tb", ":Gitsigns blame_line<CR>", desc = "Git line blame" }
     }
@@ -199,5 +196,5 @@ return {
     end
   },
   { 'adnan007d/vim-prettier' },
-  { 'tpope/vim-fugitive' }
+  { 'tpope/vim-fugitive' },
 }
