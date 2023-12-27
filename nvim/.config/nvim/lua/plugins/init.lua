@@ -156,6 +156,9 @@ return {
   },
   {
     "lewis6991/gitsigns.nvim",
+    init = function()
+      require('gitsigns').setup()
+    end,
     keys = {
       { "<leader>tb", ":Gitsigns blame_line<CR>", desc = "Git line blame" }
     }
