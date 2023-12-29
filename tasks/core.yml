@@ -1,6 +1,6 @@
 - name: Install Core packages 
   homebrew:
-    name: ["tmux", "neovim", "tldr", "fzf", "nmap", "docker", "docker-completion", "ripgrep", "webp", "sqlite", "fd", "lazygit", "bat", "gnu-sed"]
+    name: ["tmux", "neovim", "tldr", "fzf", "nmap", "docker", "docker-completion", "ripgrep", "webp", "sqlite", "fd", "lazygit", "bat", "gnu-sed", "gh"]
   tags:
     - packages
     - install
