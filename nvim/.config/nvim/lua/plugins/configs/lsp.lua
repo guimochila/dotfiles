@@ -20,6 +20,11 @@ lsp.configure('lua_ls', {
   }
 })
 
+-- Configure Emmet for Astro
+require('lspconfig').emmet_language_server.setup({
+  filetypes = { "css", "html", "javascript", "javascriptreact", "less", "sass", "pug", "typescriptreact", "astro" }
+})
+
 -- Configuring ESlint LSP
 require('lspconfig').eslint.setup({
   on_attach = function(client, bufnr)

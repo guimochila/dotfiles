@@ -200,4 +200,5 @@ return {
   },
   { 'adnan007d/vim-prettier' },
   { 'tpope/vim-fugitive' },
+  { 'wuelnerdotexe/vim-astro' }
 }
