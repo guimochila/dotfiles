@@ -12,7 +12,11 @@ local opts = {
     'graphql',
     'css',
     'scss',
-    'tsx'
+    'tsx',
+    'bash',
+    'gitignore',
+    'json',
+    'dockerfile'
   },
   sync_install = false,
   highlight = {
@@ -20,7 +24,15 @@ local opts = {
   },
   indent = { enable = true },
   context_commentstring = { enable = true, enable_autocmd = true },
-  incremental_selection = { enable = true },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "<C-space>",
+      node_incremental = "<C-space>",
+      scope_incremental = false,
+      node_decremental = "<bs>"
+    }
+  },
   autotag = {
     enable = true,
   }
