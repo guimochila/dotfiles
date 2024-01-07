@@ -19,8 +19,9 @@ return {
       -- LSP configuration
       server = {
         on_attach = function(client, bufnr)
-          require("lsp-inlayhints").on_attach(client, bufnr)
-          require("lsp-inlayhints").show()
+          require("lsp-inlayhints").on_attach(client, bufnr).show()
+          print("DEBUG")
+
           local opts = { noremap = true, silent = true }
           local keymap = vim.keymap
 
