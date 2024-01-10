@@ -73,7 +73,12 @@ return {
         }),
       },
     }
+    
+    vim.diagnostic.config({
+      virtual_text = true
+    })
 
     cmp.setup(options)
+
   end,
 }

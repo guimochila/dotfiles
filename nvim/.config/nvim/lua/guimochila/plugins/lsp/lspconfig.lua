@@ -1,4 +1,4 @@
-local function attach()
+local function attach(client, bufnr)
   local opts = { noremap = true, silent = true }
   local keymap = vim.keymap -- for conciseness
 
@@ -27,29 +27,44 @@ end
 return {
   {
     "neovim/nvim-lspconfig",
+    lazy = false,
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
+      "lvimuser/lsp-inlayhints.nvim",
       { "antosha417/nvim-lsp-file-operations", config = true },
+    },
+    opts = {
+      inlay_hints = { enabled = true },
     },
     config = function()
       local lspconfig = require("lspconfig")
       local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-
-
       -- used to enable autocompletion (assign to every lsp server config)
       local capabilities = cmp_nvim_lsp.default_capabilities()
-
 
       require("mason-lspconfig").setup({
         handlers = {
           function(server_name)
-            lspconfig[server_name].setup {
-              on_attach = attach,
-              capabilities = capabilities
+            if server_name ~= "rust_analyzer" then
+              lspconfig[server_name].setup {
+                on_attach = attach,
+                capabilities = capabilities
+              }
+            end
+          end,
+          ["lua_ls"] = function ()
+            lspconfig.lua_ls.setup {
+              settings = {
+                Lua = {
+                  diagnostics = {
+                    globals = { "vim" }
+                  }
+                }
+              }
             }
           end
         }

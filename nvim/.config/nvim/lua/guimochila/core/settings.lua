@@ -20,6 +20,6 @@ vim.opt.colorcolumn = "80"
 vim.opt.textwidth = 80
 vim.opt.termguicolors = true
 
-vim.diagnostic.config({
-  virtual_text = true
-})
+-- Format on save via LSP
+vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
+
