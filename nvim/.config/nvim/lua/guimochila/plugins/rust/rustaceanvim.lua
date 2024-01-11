@@ -3,9 +3,9 @@ return {
   version = '^3', -- Recommended
   ft = { 'rust' },
   dependencies = {
-    {"lvimuser/lsp-inlayhints.nvim",
+    {"simrat39/inlay-hints.nvim",
     config = function ()
-      require("lsp-inlayhints").setup()
+      require("inlay-hints").setup()
     end
   }
   },
@@ -20,12 +20,14 @@ return {
                 autocmd BufEnter,CursorHold,InsertLeave *.rs silent! lua vim.lsp.codelens.refresh()
               augroup END
             ]])
+
+          require("inlay-hints").set_all()
         end,
       },
     -- LSP configuration
     server = {
         on_attach = function(client, bufnr)
-          require("lsp-inlayhints").on_attach(client, bufnr)
+          require("inlay-hints").on_attach(client, bufnr)
 
           local opts = { noremap = true, silent = true }
           local keymap = vim.keymap
