@@ -23,3 +23,7 @@ keymap.set('n', '<leader><CR>', ':so ~/.config/nvim/init.lua<CR>')
 keymap.set('n', 'œ', ':copen<CR>')
 keymap.set('n', '∆', ':cnext<CR>')
 keymap.set('n', '˚', ':cprev<CR>')
+
+-- Closing buffers
+keymap.set('n', '<leader>cx', ':bd<CR>', { desc = "Close current buffer" })
+keymap.set('n', '<leader>cX', ':bd!<CR>', { desc = "Close current buffer without saving" })
