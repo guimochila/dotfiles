@@ -12,10 +12,12 @@ return {
   config = function()
     require('nvim-treesitter.configs').setup({
       ensure_installed = {
+        'astro',
         'lua',
         'rust',
         'javascript',
         'typescript',
+        'svelte',
         'html',
         'markdown',
         'markdown_inline',

@@ -1,7 +1,7 @@
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 
-function get_filename(index)
+local function get_filename(index)
   return mark.get_marked_file_name(index)
 end
 
