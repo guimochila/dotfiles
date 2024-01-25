@@ -1,5 +1,5 @@
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Git status" })
-vim.keymap.set("n", "<leader>gd", function()
+vim.keymap.set("n", "<leader>df", function()
   if string.find(vim.fn.bufname('%'), 'fugitive') then
     vim.api.nvim_buf_delete(vim.api.nvim_get_current_buf(), { force = true })
   else

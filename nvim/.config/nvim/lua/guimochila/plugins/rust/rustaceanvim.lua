@@ -3,11 +3,12 @@ return {
   version = '^3', -- Recommended
   ft = { 'rust' },
   dependencies = {
-    {"simrat39/inlay-hints.nvim",
-    config = function ()
-      require("inlay-hints").setup()
-    end
-  }
+    {
+      "simrat39/inlay-hints.nvim",
+      config = function()
+        require("inlay-hints").setup()
+      end
+    }
   },
   config = function()
     vim.g.rustaceanvim = {
@@ -24,8 +25,8 @@ return {
           require("inlay-hints").set_all()
         end,
       },
-    -- LSP configuration
-    server = {
+      -- LSP configuration
+      server = {
         on_attach = function(client, bufnr)
           require("inlay-hints").on_attach(client, bufnr)
 
@@ -33,7 +34,7 @@ return {
           local keymap = vim.keymap
 
           opts.desc = "Go to definiton"
-          keymap.set("n", "gD", vim.lsp.buf.definition, opts)
+          keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 
           opts.desc = "Hover"
           keymap.set("n", "K", vim.lsp.buf.hover, opts)

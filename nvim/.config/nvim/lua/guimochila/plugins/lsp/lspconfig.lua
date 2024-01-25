@@ -3,7 +3,7 @@ local function attach(client, bufnr)
   local keymap = vim.keymap -- for conciseness
 
   opts.desc = "Go to definiton"
-  keymap.set("n", "gD", vim.lsp.buf.definition, opts)
+  keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 
   opts.desc = "Hover"
   keymap.set("n", "K", vim.lsp.buf.hover, opts)
@@ -56,7 +56,7 @@ return {
               }
             end
           end,
-          ["lua_ls"] = function ()
+          ["lua_ls"] = function()
             lspconfig.lua_ls.setup {
               settings = {
                 Lua = {
