@@ -27,3 +27,6 @@ keymap.set('n', '˚', ':cprev<CR>')
 -- Closing buffers
 keymap.set('n', '<leader>cx', ':bd<CR>', { desc = "Close current buffer" })
 keymap.set('n', '<leader>cX', ':bd!<CR>', { desc = "Close current buffer without saving" })
+
+-- Tmux Sessionizer
+keymap.set("n", "<C-T>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
