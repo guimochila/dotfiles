@@ -3,7 +3,7 @@ local function apply_colors()
   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
   vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg = 0, bg = "#092135" })
   vim.api.nvim_set_hl(0, "VisualActive", { bg = "#1d3b88" })
-  vim.api.nvim_set_hl(0, "Visual", { bg = "#FFEBF1" })
+  vim.api.nvim_set_hl(0, "Visual", { bg = "#1f4429" })
 end
 -- Color scheme
 return {
