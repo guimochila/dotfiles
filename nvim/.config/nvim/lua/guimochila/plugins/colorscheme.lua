@@ -1,6 +1,6 @@
 local function apply_colors()
   vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#24292f" })
   vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg = 0, bg = "#092135" })
   vim.api.nvim_set_hl(0, "VisualActive", { bg = "#1d3b88" })
   vim.api.nvim_set_hl(0, "Visual", { bg = "#1f4429" })
