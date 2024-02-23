@@ -66,7 +66,24 @@ return {
                 }
               }
             }
-          end
+          end,
+          -- Configuring Go LSP
+          ['gopls'] = function()
+            lspconfig.gopls.setup {
+              on_attach = attach,
+              capabilities = capabilities,
+              cmd = { "gopls" },
+              settings = {
+                gopls = {
+                  completeUnimported = true,
+                  usePlaceholders = true,
+                  analyses = {
+                    unusedparams = true,
+                  }
+                }
+              }
+            }
+          end,
         }
       })
     end
