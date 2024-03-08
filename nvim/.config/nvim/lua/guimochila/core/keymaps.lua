@@ -30,3 +30,12 @@ keymap.set('n', '<leader>cX', ':bd!<CR>', { desc = "Close current buffer without
 
 -- Tmux Sessionizer
 keymap.set("n", "<C-T>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+
+-- Highlight when yaking text
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight yanking text',
+  group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end
+})
