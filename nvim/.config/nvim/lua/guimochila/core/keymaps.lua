@@ -39,3 +39,18 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end
 })
+
+keymap.set('n', '<leader>co', function()
+  if vim.g.copilot_enabled == 0 then
+    local current_folder = vim.fn.getcwd()
+    if string.find(current_folder, "/work") then
+      vim.cmd("Copilot enable")
+      print("Copilot enabled! \u{1F680}")
+    else
+      print("This is not a working project! \u{270B}")
+    end
+  else
+    vim.cmd("Copilot disable")
+    print("Copilot disabled! \u{1F44D}")
+  end
+end, { desc = "Enable/Disable Copilot" })
