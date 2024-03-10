@@ -8,8 +8,17 @@ local function attach(client, bufnr)
   opts.desc = "Hover"
   keymap.set("n", "K", vim.lsp.buf.hover, opts)
 
-  opts.desc = "Diagnostics"
+  opts.desc = "Show Diagnostics error message"
   keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
+
+  opts.desc = "Go to previous Diagnostics"
+  keymap.set("n", "d>", vim.diagnostic.goto_prev, opts)
+
+  opts.desc = "Go to next Diagnostics"
+  keymap.set("n", "d<", vim.diagnostic.goto_next, opts)
+
+  opts.desc = "Open diagnostic quickfix"
+  keymap.set("n", "dq", vim.diagnostic.setloclist, opts)
 
   opts.desc = "Code Actions"
   keymap.set("n", "<Leader>ca", vim.lsp.buf.code_action, opts)
