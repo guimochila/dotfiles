@@ -30,7 +30,8 @@ return {
         'bash',
         'gitignore',
         'json',
-        'dockerfile'
+        'dockerfile',
+        'go'
       },
       sync_install = false,
       highlight = {
