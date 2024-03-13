@@ -31,7 +31,8 @@ return {
         'gitignore',
         'json',
         'dockerfile',
-        'go'
+        'go',
+        'gotmpl'
       },
       sync_install = false,
       highlight = {
