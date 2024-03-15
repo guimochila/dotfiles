@@ -12,8 +12,8 @@ keymap.set("n", "<leader>y", [["+Y]])
 keymap.set('n', 'x', '"_x')
 
 -- Increment/Decrement
-keymap.set('n', '+', '<C-a>')
-keymap.set('n', '-', '<C-x>')
+keymap.set('n', '+', '<C-x>')
+keymap.set('n', '-', '<C-a>')
 
 -- Source init file
 keymap.set('n', '<leader><CR>', ':so ~/.config/nvim/init.lua<CR>')
