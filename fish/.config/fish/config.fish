@@ -28,4 +28,8 @@ set -gx PATH "$HOME/.local/scripts" $PATH
 # Tmux-sessionizer
 bind \ct tmux-sessionizer
 
+# Add GoPath
+set -x GOPATH (go env GOPATH)
+set -x PATH $PATH (go env GOPATH)/bin
+
 starship init fish | source
