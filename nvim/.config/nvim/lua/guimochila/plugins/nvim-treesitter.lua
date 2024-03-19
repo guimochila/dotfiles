@@ -32,7 +32,8 @@ return {
         'json',
         'dockerfile',
         'go',
-        'gotmpl'
+        'gotmpl',
+        'templ'
       },
       sync_install = false,
       highlight = {
