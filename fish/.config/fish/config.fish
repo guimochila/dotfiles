@@ -7,13 +7,13 @@ set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
 
 # pnpm
-set -gx PNPM_HOME "/Users/scaldela/Library/pnpm"
+set -gx PNPM_HOME "/Users/guilherme/Library/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
 # pnpm end
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-if test -f /Users/scaldela/miniconda3/bin/conda
-    eval /Users/scaldela/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+if test -f /Users/guilherme/miniconda3/bin/conda
+    eval /Users/guilherme/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 end
 # <<< conda initialize <<<
 
