@@ -12,10 +12,10 @@ local function attach(client, bufnr)
   keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
 
   opts.desc = "Go to previous Diagnostics"
-  keymap.set("n", "d>", vim.diagnostic.goto_prev, opts)
+  keymap.set("n", "d<", vim.diagnostic.goto_prev, opts)
 
   opts.desc = "Go to next Diagnostics"
-  keymap.set("n", "d<", vim.diagnostic.goto_next, opts)
+  keymap.set("n", "d>", vim.diagnostic.goto_next, opts)
 
   opts.desc = "Open diagnostic quickfix"
   keymap.set("n", "dq", vim.diagnostic.setloclist, opts)
