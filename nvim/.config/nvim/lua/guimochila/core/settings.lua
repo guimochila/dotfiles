@@ -27,3 +27,5 @@ vim.wo.signcolumn = "yes"
 
 -- Format on save via LSP
 vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
+
+vim.filetype.add({ extension = { templ = "templ", tmpl = "templ" } })

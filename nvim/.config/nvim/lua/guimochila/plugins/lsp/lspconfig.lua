@@ -93,6 +93,14 @@ return {
               }
             }
           end,
+          -- Configuring Emmet for other file types
+          ['emmet_ls'] = function()
+            lspconfig.emmet_ls.setup {
+              on_attach = attach,
+              capabilities = capabilities,
+              filetypes = { "html", "templ", "tpml" }
+            }
+          end
         }
       })
     end
