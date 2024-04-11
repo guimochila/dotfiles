@@ -6,6 +6,8 @@ vim.keymap.set("n", "<leader>df", function()
     vim.cmd("Gvdiff")
   end
 end, { desc = "Git diff" })
+vim.keymap.set("n", "<leader>gh", ":diffget //2<CR>")
+vim.keymap.set("n", "<leader>gl", ":diffget //3<CR>")
 
 local Guimochila_fugitive = vim.api.nvim_create_augroup("Guimochila_fugitive", {})
 
