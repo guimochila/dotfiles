@@ -29,3 +29,4 @@ vim.wo.signcolumn = "yes"
 vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
 
 vim.filetype.add({ extension = { tmpl = "html" } })
+vim.filetype.add({ extension = { mdx = "mdx" } })
