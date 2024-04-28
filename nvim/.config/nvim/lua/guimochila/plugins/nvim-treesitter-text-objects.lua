@@ -49,6 +49,12 @@ return {
             ["[["] = { query = "@function.outer", desc = "Next function" },
             ["[c"] = { query = "@class.outer", desc = "Next class start" },
           },
+          goto_next = {
+            ["]i"] = { query = "@parameter.inner", desc = "Select inner part of parameter/argument" },
+          },
+          goto_previous = {
+            ["[i"] = { query = "@parameter.inner", desc = "Select inner part of parameter/argument" },
+          }
         }
       }
     })
