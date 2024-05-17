@@ -7,6 +7,7 @@ SETUVAR FZF_PREVIEW_DIR_CMD:ls
 SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
 SETUVAR FZF_TMUX_HEIGHT:40\x25
 SETUVAR --export NODE_EXTRA_CA_CERTS:/Users/scaldela/Library/Application\x20Support/mkcert/rootCA\x2epem
+SETUVAR --export VOLTA_FEATURE_PNPM:1
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/Users/scaldela/\x2elocal/share/z/data
