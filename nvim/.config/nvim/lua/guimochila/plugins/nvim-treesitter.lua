@@ -4,10 +4,6 @@ return {
   event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
-    {
-      "windwp/nvim-ts-autotag",
-      opts = { update_on_insert = true }
-    },
   },
   config = function()
     require('nvim-treesitter.configs').setup({
@@ -49,9 +45,6 @@ return {
           scope_incremental = false,
           node_decremental = "<bs>"
         }
-      },
-      autotag = {
-        enable = true,
       }
     })
 
