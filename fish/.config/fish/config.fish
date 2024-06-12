@@ -19,6 +19,8 @@ end
 
 alias vim='nvim'
 alias rmmodules='find . -name \'node_modules\' -type d -prune -exec rm -rf \'{}\' +'
+alias l="eza -l --icons --git -a"
+alias lt="eza --tree --level=2 --long --icons --git"
 
 # fzf bindings
 fzf_configure_bindings --directory=\cF --git_status=\cS --git_log=\cG --processes=\cP
