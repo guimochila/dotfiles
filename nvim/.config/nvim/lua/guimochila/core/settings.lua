@@ -22,6 +22,7 @@ vim.opt.scrolloff = 8
 vim.opt.colorcolumn = "80"
 vim.opt.textwidth = 80
 vim.opt.termguicolors = true
+vim.opt.conceallevel = 1
 
 vim.wo.signcolumn = "yes"
 
