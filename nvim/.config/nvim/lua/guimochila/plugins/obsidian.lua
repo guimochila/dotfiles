@@ -61,4 +61,17 @@ return {
       tags = "",
     },
   },
+  config = function()
+    -- Create an autocommand group to avoid duplications
+    vim.api.nvim_create_augroup('MarkdownSettings', { clear = true })
+
+    -- Set conceallevel to 2 for Markdown files
+    vim.api.nvim_create_autocmd('FileType', {
+      group = 'MarkdownSettings',
+      pattern = 'markdown',
+      callback = function()
+        vim.opt_local.conceallevel = 2
+      end
+    })
+  end
 }

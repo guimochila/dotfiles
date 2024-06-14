@@ -31,6 +31,18 @@ local function attach(client, bufnr)
 
   opts.desc = "Restart LSP"
   keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
+  -- Create a command `:Format` local to the LSP buffer
+  vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+    if vim.lsp.buf.format then
+      vim.lsp.buf.format()
+    elseif vim.lsp.buf.formatting then
+      vim.lsp.buf.formatting()
+    end
+  end, { desc = 'Format current buffer with LSP' })
+
+  -- Format on save via LSP
+  vim.cmd([[autocmd BufWritePre * lua vim.cmd('Format')]])
 end
 
 return {
@@ -67,6 +79,7 @@ return {
           end,
           ["lua_ls"] = function()
             lspconfig.lua_ls.setup {
+              on_attach = attach,
               settings = {
                 Lua = {
                   diagnostics = {
