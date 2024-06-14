@@ -51,8 +51,6 @@ local function attach(client, bufnr)
       vim.cmd(':Format')
     end,
   })
-
-  -- vim.cmd([[autocmd BufWritePre * lua vim.cmd(':Format')]])
 end
 
 return {
