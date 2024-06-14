@@ -41,8 +41,18 @@ local function attach(client, bufnr)
     end
   end, { desc = 'Format current buffer with LSP' })
 
+  -- Create an autocommand group to avoid duplications
   -- Format on save via LSP
-  vim.cmd([[autocmd BufWritePre * lua vim.cmd(':Format')]])
+  local format_on_save = vim.api.nvim_create_augroup('FormatOnSave', { clear = true })
+  vim.api.nvim_create_autocmd('BufWritePre', {
+    group = format_on_save,
+    buffer = 0,
+    callback = function()
+      vim.cmd(':Format')
+    end,
+  })
+
+  -- vim.cmd([[autocmd BufWritePre * lua vim.cmd(':Format')]])
 end
 
 return {
@@ -80,6 +90,7 @@ return {
           ["lua_ls"] = function()
             lspconfig.lua_ls.setup {
               on_attach = attach,
+              capabilities = capabilities,
               settings = {
                 Lua = {
                   diagnostics = {
