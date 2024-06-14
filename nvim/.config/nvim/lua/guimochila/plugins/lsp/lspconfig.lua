@@ -42,7 +42,7 @@ local function attach(client, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 
   -- Format on save via LSP
-  vim.cmd([[autocmd BufWritePre * lua vim.cmd('Format')]])
+  vim.cmd([[autocmd BufWritePre * lua vim.cmd(':Format')]])
 end
 
 return {
