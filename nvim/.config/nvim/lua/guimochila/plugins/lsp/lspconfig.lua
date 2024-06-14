@@ -48,7 +48,9 @@ local function attach(client, bufnr)
     group = format_on_save,
     buffer = 0,
     callback = function()
-      vim.cmd(':Format')
+      if vim.bo.filetype ~= "fugitive" then
+        vim.cmd(':Format')
+      end
     end,
   })
 end
