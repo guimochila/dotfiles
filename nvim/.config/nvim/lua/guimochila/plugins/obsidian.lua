@@ -61,7 +61,7 @@ return {
       tags = "",
     },
   },
-  config = function()
+  config = function(_, opts)
     -- Create an autocommand group to avoid duplications
     vim.api.nvim_create_augroup('MarkdownSettings', { clear = true })
 
@@ -73,5 +73,7 @@ return {
         vim.opt_local.conceallevel = 2
       end
     })
+
+    require("obsidian").setup(opts)
   end
 }
