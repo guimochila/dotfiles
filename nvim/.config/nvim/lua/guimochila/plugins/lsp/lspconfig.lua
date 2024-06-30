@@ -1,4 +1,4 @@
-local function attach(client, bufnr)
+local function attach(_, bufnr)
   local opts = { noremap = true, silent = true }
   local keymap = vim.keymap -- for conciseness
 
@@ -31,6 +31,9 @@ local function attach(client, bufnr)
 
   opts.desc = "Restart LSP"
   keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
+  opts.desc = "Format"
+  keymap.set("n", "<leader>P", ":Format<CR>", opts)
 
   -- Create a command `:Format` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)

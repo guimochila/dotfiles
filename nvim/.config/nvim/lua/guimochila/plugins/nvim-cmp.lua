@@ -24,7 +24,7 @@ return {
     -- Set completept to have a better completaion experience
     local options = {
       completion = {
-        completeopt = "menu,menuone,preview,noselect",
+        completeopt = "menu,menuone,noinsert",
       },
       snippet = {
         expand = function(args)
@@ -34,7 +34,7 @@ return {
       mapping = {
         ["<C-p>"] = cmp.mapping.select_prev_item(),
         ["<C-n>"] = cmp.mapping.select_next_item(),
-        ["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Instert, select = true }),
+        ["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<Esc>"] = cmp.mapping.abort(),
         ["<Tab>"] = cmp.mapping(function(fallback)
@@ -73,12 +73,11 @@ return {
         }),
       },
     }
-    
+
     vim.diagnostic.config({
       virtual_text = true
     })
 
     cmp.setup(options)
-
   end,
 }
