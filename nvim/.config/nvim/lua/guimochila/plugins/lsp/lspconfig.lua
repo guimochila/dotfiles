@@ -1,5 +1,5 @@
 local function attach(_, bufnr)
-  local opts = { noremap = true, silent = true }
+  local opts = { noremap = true, silent = true, buffer = bufnr }
   local keymap = vim.keymap -- for conciseness
 
   opts.desc = "Go to definiton"
