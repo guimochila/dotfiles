@@ -33,7 +33,7 @@ local function attach(_, bufnr)
   keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 
   opts.desc = "Format"
-  keymap.set("n", "<leader>P", ":Format<CR>", opts)
+  keymap.set("n", "<leader>F", ":Format<CR>", opts)
 
   -- Create a command `:Format` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
@@ -49,7 +49,6 @@ local function attach(_, bufnr)
   local format_on_save = vim.api.nvim_create_augroup('FormatOnSave', { clear = true })
   vim.api.nvim_create_autocmd('BufWritePre', {
     group = format_on_save,
-    buffer = 0,
     callback = function()
       if vim.bo.filetype ~= "fugitive" then
         vim.cmd(':Format')
