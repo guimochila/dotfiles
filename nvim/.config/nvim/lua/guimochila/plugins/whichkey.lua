@@ -1,8 +1,11 @@
 return {
   "folke/which-key.nvim",
-  config = function()
-    vim.o.timeout = true
-    vim.o.timeoutlen = 300
-    require("which-key").setup({})
-  end
+  event = "VeryLazy",
+  opts = {
+    preset = "helix",
+    delay = 300,
+    triggers = {
+      { "<auto>", mode = "nisoc" },
+    }
+  }
 }

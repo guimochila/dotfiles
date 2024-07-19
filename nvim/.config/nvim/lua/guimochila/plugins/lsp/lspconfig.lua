@@ -50,7 +50,7 @@ local function attach(_, bufnr)
   vim.api.nvim_create_autocmd('BufWritePre', {
     group = format_on_save,
     callback = function()
-      if vim.bo.filetype ~= "fugitive" then
+      if vim.bo.filetype ~= "fugitive" or vim.bo.filetype ~= 'sql' then
         vim.cmd(':Format')
       end
     end,
