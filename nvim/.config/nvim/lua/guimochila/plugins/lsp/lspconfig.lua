@@ -51,7 +51,7 @@ local function attach(_, bufnr)
     group = format_on_save,
     callback = function()
       local filetype = vim.bo.filetype
-      if filetype ~= "fugitive" and filetype ~= 'sql' then
+      if filetype ~= "fugitive" then
         vim.cmd(':Format')
       end
     end,
