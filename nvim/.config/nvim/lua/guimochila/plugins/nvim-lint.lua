@@ -4,6 +4,12 @@ return {
   config = function()
     local lint = require("lint")
 
+    lint.linters.prettier = {
+      cmd = 'prettier',                           -- Command to run prettier
+      args = { '--stdin-filepath', '%filepath' }, -- Arguments to pass to prettier
+      stdin = true,                               -- Whether to use stdin
+    }
+
     lint.linters_by_ft = {
       go = { "golangcilint" },
     }
